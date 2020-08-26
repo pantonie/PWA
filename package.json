@@ -1,0 +1,15 @@
+{
+  "name": "pwa",
+  "version": "1.0.0",
+  "description": "test site for PWA presentation",
+  "main": "index.js",
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anton Panteleev",
+  "license": "ISC",
+  "dependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
