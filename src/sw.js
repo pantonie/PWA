@@ -17,18 +17,12 @@ self.addEventListener('fetch', (evt) => {
     const { request } = evt;
     if (request.headers.has('range')) return;
 
-    // console.log('request', evt.request.mode);
     if (request.mode === 'navigate') {
         evt.respondWith(
             fetch(request).catch((err) => {
                 console.log('offline mode', err);
                 return fetch(new Request('/offline.html'));
-                // return caches.match('offline.html');
-                // const cache = await caches.open(CACHE_NAME);
-                // return cache.match('offline.html', {ignoreVary:true});
-                // const offline = await cache.match('offline.html', {ignoreVary:true});
-                // return offline;
-                return caches.open(CACHE_NAME).then(cache => {return cache.match('offline.html')})
+                // return caches.open(CACHE_NAME).then(cache => {return cache.match('offline.html')})
             })
         );
     }
