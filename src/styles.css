@@ -9,7 +9,6 @@ html, body {
     margin: 0;
     padding: 0;
     outline: none;
-    overscroll-behavior: none;
 }
 body {
     flex: 1 1 0;
@@ -46,7 +45,7 @@ nav {
     margin: 0 10px;
 }
 #navLinks > a:hover {
-    border-bottom: 2px solid #F47216    ;
+    border-bottom: 2px solid #F47216;
 }
 #burger {
     margin: -15px;

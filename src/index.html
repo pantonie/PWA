@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="An example site to show PWA in action">
+    <meta name="theme-color" content="#db1d2b"/>
     <title>PWA page</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./favicon_192x192.png">
+    <link rel="manifest" href="./pwa/manifest_v3.json"/>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(
+                    (registration) => {
+                        // registration was successful
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    },
+                    (err) => {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                );
+            });
+        }
+    </script>
     <script src="./script.js"></script>
 </head>
 <body>
@@ -15,10 +35,10 @@
             <a href="/" id="logo"><div><img src="./logo.png" alt="logo"/></div></a>
             <div id="shortLogo"><img src="./short_logo.png" alt="short logo"/></div>
             <div id="navLinks">
-                <a href="">Main</a>
-                <a href="">Products</a>
-                <a href="">About</a>
-                <a href="">Contacts</a>
+                <a href="/">Main</a>
+                <a href="/products">Products</a>
+                <a href="/about">About</a>
+                <a href="/contacts">Contacts</a>
             </div>
 
             <div id="burger" onclick="handleBurgerClick()">
@@ -27,10 +47,10 @@
         </nav>
         <div id="mobileLinksContainer">
             <div>
-                <a href="">Main</a>
-                <a href="">Products</a>
-                <a href="">About</a>
-                <a href="">Contacts</a>
+                <a href="/">Main</a>
+                <a href="/products">Products</a>
+                <a href="/about">About</a>
+                <a href="/contacts">Contacts</a>
             </div>
         </div>
         <div id="content">

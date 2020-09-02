@@ -1,5 +1,4 @@
 function handleBurgerClick(){
-    console.log('click');
     const burger = document.getElementById('burger');
     const menu = document.getElementById('mobileLinksContainer');
     const style = burger.className;

@@ -1,0 +1,30 @@
+{
+  "name": "Cool Company",
+  "short_name": "CoCo",
+  "start_url": "../index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F47216",
+  "theme_color": "#db1d2b",
+  "description": "An example PWA page",
+  "icons": [
+    {
+      "src": "/pwa/icons/favicon_32x32.png",
+      "sizes": "32x32 16X16",
+      "type": "image/png"
+    },{
+      "src": "/pwa/icons/favicon_64x64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/pwa/icons/favicon_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },{
+      "src": "/pwa/icons/favicon_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
