@@ -22,7 +22,6 @@ self.addEventListener('fetch', (evt) => {
             fetch(request).catch((err) => {
                 console.log('offline mode', err);
                 return fetch(new Request('/offline.html'));
-                // return caches.open(CACHE_NAME).then(cache => {return cache.match('offline.html')})
             })
         );
     }
