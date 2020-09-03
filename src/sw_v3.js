@@ -7,7 +7,7 @@ self.addEventListener('install', (evt) => {
     evt.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
             console.log('precaching');
-            return cache.addAll(['/offline.html']);
+            return cache.addAll(FILES_TO_CACHE);
         })
     );
 });
@@ -15,7 +15,6 @@ self.addEventListener('install', (evt) => {
 // -------- take files from cache --------------
 self.addEventListener('fetch', (evt) => {
     const { request } = evt;
-    if (request.headers.has('range')) return;
 
     if (request.mode === 'navigate') {
         evt.respondWith(
@@ -29,7 +28,7 @@ self.addEventListener('fetch', (evt) => {
 
 // -------- clear cache --------------
 self.addEventListener('activate', (evt) => {
-    const cacheAllowList = ['coco_cache'];
+    const cacheAllowList = [CACHE_NAME];
     evt.waitUntil(
         caches.keys().then((cacheNames) => {
             return Promise.all(
